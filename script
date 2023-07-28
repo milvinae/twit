@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         Custom Favicon for Twitter
-// @namespace    http://tampermonkey.net/
+// @name         Custom Tab Name and Favicon for Twitter (Customized)
+// @namespace    http://tampermonkey.net/customized
 // @version      0.1
-// @description  Change favicon for Twitter on your browser
+// @description  Set the tab name to "Twitter" and change favicon for Twitter on your browser
 // @author       You
 // @match        https://twitter.com/*
 // @grant        none
@@ -11,14 +11,28 @@
 (function() {
     'use strict';
 
+    // Set the tab name to "Twitter"
+    const customTabName = "Twitter";
+
+    // Custom favicon URL
     const newFaviconUrl = 'https://abs.twimg.com/favicons/twitter.2.ico';
 
-    const setFavicon = () => {
+    // Function to set the custom tab name and favicon
+    function setTabNameAndFavicon() {
         const favicon = document.querySelector("link[rel='shortcut icon']");
         if (favicon) {
             favicon.href = newFaviconUrl;
         }
-    };
 
-    setFavicon();
+        // Update the tab name only if it is not already "Twitter"
+        if (document.title !== customTabName) {
+            document.title = customTabName;
+        }
+    }
+
+    // Call the function to set the custom tab name and favicon when the page loads
+    window.addEventListener('load', setTabNameAndFavicon);
+
+    // Listen for any changes to the title element and update it back to "Twitter"
+    document.addEventListener('DOMSubtreeModified', setTabNameAndFavicon);
 })();
