@@ -1,6 +1,6 @@
 # twit
 
-A ViolentMonkey script to chnage the twitter favicon back to a bird and rename the tab 'Twitter'
+A ViolentMonkey script to chnage the twitter favicon back to a bird and rename the tab 'Twitter'. Also sort of changes the loading icon.
 
 1. install [Violentmonkey](https://violentmonkey.github.io/) (opensource), [tampermonkey](https://www.tampermonkey.net/) or [greasemonkey](https://addons.mozilla.org/en-GB/firefox/addon/greasemonkey/)
 2. create new script
@@ -8,3 +8,5 @@ A ViolentMonkey script to chnage the twitter favicon back to a bird and rename t
 4. save
 
 might need to clear cache
+
+I am sure someone can clean this up and improve it.
